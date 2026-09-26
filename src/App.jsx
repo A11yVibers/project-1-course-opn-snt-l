@@ -1,3 +1,16 @@
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import Catalog from './components/Catalog.jsx'
+import CoursePage from './components/CoursePage.jsx'
+
 export default function App() {
-  return <main><h1>Build the requested website here</h1></main>
+  return (
+    <HashRouter>
+      <div className="app-shell">
+        <Routes>
+          <Route path="/" element={<Catalog />} />
+          <Route path="/course/:courseId" element={<CoursePage />} />
+        </Routes>
+      </div>
+    </HashRouter>
+  )
 }
